@@ -1,0 +1,127 @@
+/* styles.css */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #e6e2df; /* A soft, neutral background color */
+  background-image: url(https://cdn.wallpapersafari.com/7/83/9z6KMp.jpg);
+  background-size: cover; /* Make the image cover the entire background */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  background-position: center; /* Center the image */
+}
+
+
+.envelope {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    margin: 50px auto;
+    cursor: pointer;
+    perspective: 1000px;
+    background: url('https://i.pinimg.com/736x/13/cb/b9/13cbb926828af7de87f16bd8b7dfc3ca.jpg');
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease;
+  }
+  
+  .flap {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: url('https://i.pinimg.com/736x/13/cb/b9/13cbb926828af7de87f16bd8b7dfc3ca.jpg');
+    transform-origin: bottom;
+    transition: transform 0.8s ease;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .body {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 50%;
+    background: url('https://i.pinimg.com/736x/13/cb/b9/13cbb926828af7de87f16bd8b7dfc3ca.jpg');
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: -1;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .letter {
+    top: 20%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #98887f;
+    background-image: url(https://th.bing.com/th/id/OIP.jF_xEe4GPS56tRUAKTGb6gHaHa?rs=1&pid=ImgDetMain);
+    /*overflow: hidden;
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transform-origin: bottom;
+    z-index: -2;
+    opacity: 0;*/
+    font-family: "Sedan", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: justify;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+    overflow-y: auto; /* Enables scrolling */
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.2); /* Optional: adds depth */
+     
+  }
+
+/* styles.css */
+.letter-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px; /* Medium font size for better readability */
+    text-align: center;
+   
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out 0.5s;
+}
+
+
+.envelope.open .flap {
+    transform: rotateX(-180deg);
+}
+
+.envelope.open .letter {
+    opacity: 1;
+    transform: translateY(-120px);
+}
+
+.envelope.open .letter-content {
+    opacity: 1;
+}
+
+/* Additional Styling for Aesthetic Enhancements */
+.seal {
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 20% 20%, #ff6347, #800000);
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
